@@ -63,6 +63,6 @@ describe FizzBuzz do
   end
 
   it "can't be called with a non-matching pattern" do
-    _(@fb.fizzbuzz("not a number", "or this")).must_equal :foobar
+    ->{@fb.fizzbuzz("not a number", "or this")}.must_raise Defpat::NoPatternMatchError
   end
 end
